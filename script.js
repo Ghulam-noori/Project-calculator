@@ -1,67 +1,144 @@
-var input = document.getElementById("input-text");
-// var button =document.getElementsByClassName("btn");
+const screen = document.getElementById('input');
+const numberButtons = document.querySelectorAll('.btn');
+const allDeleteButton = document.getElementById('delete-btn');
+const allClearButton = document.getElementById('all-clear-btn');
+const addButton = document.getElementById('add-btn');
+const subtractButton = document.getElementById('subtract-btn');
+const multiplyButton = document.getElementById('multiply-btn');
+const divideButton = document.getElementById('divide-btn');
+const equalsButton = document.getElementById('equal-btn');
 
-const row1Buttons = document.getElementById('row-1');
-const row2Buttons = document.getElementById('row-2');
-const row3Buttons = document.getElementById('row-3');
-const row4Buttons = document.getElementById('row-4')
-
-row1Buttons, row2Buttons, row3Buttons, row4Buttons.addEventListener('click', (event) => {
-  const isButton = event.target.value;
-  input.value = event.target.value;
-  if (isButton ===1) {
-    input.value = input.value+1;
-    input.value = input.value+1;
- 
-  } else if (isButton ===1) {
-    input.value = input.value+2;
-  }
-  else if (isButton ===3) {
-    input.value = input.value+3;
-  }
-})
+console.log(divideButton);
 
 
+numberButtons.forEach(function(button){
+    button.addEventListener('click', function(e){
+        screen.value += e.target.value;
+    });
+    console.log(screen.value);
+    });
+
+allDeleteButton.addEventListener('click', function(e){
+    screen.value =screen.value.slice(0, -1);
+    });
+
+allClearButton.addEventListener('click', function(e){
+    screen.value = '';
+});
+equalsButton.addEventListener('click', function(e){
+    function calculation() {
+        let displayContent = screen.value;
+        let numbers = displayContent.split(/\+|\-|\*|\//g);
+        let operators = displayContent.replace(/[0-9]|\./g, "").split("");
+        let result = Number(numbers[0]);
+        
+        for (let i = 0; i < operators.length; i++) {
+        let num = Number(numbers[i+1]);
+        switch (operators[i]) {
+            case "+":
+            result += num;
+            break;
+            case "-":
+            result -= num;
+            break;
+            case "*":
+              result *= num;
+            break;
+            case "/":
+            result /= num;
+            break;
+            default:
+            break;
+        }
+        }
+        
+        input.value = result;
+    }
+    return calculation();
+});
 
 
 
 
 
-// button.addEventListener("click", myFunction);
 
 
-// function myFunction() {
-//     if (button.value === "7") {
-//         input.value = input.value + 7;
-//     } else {
-//         alert("Try again!");
-//     }}
 
-//     // const wrapper = document.getElementsById('seven');
-//     const wrapper1 = document.getElementById('eight');
 
-// wrapper1.addEventListener('click' , function(){
-//     if(!)
-//     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// equalsButton.addEventListener('click', function(e){
+//     let screenInput = screen.value;
+//     function calculate(a,b, numberButtons) { 
+//         if (numberButtons === '+') { 
+//         return add(a+b); 
+//         } else if (numberButtons === '-') { 
+//         return subtract(screenInput); 
+//         } else if (numberButtons === '*') { 
+//         return multiply(screenInput); 
+//         } else if (numberButtons === '/') { 
+//         return divide(screenInput); 
+//         } 
+//     } const result = calculate; 
+//     console.log(result);
 // });
 
 
-// function myFunction() {
-//     if (wrapper.value === "7") {
-//         input.value = input.value + 7;
-//         if (wrapper1.value === "8") {
-//             input.value = input.value + 8;
-//         } else {
-//             alert("Try again!");
-//         }}}
 
-// const button = document.getElementsByTagName("button");
+// screen.value = eval(screen.value + values);
 
-// button.addEventListener("click", myFunction);
 
-// function myFunction() {
-//     if (button[0, 2, 3, 4, 5, 6].value === button.value) {
-//         input.value = input.value ++;
-//     } else {
-//         alert("Try again!");
-//     }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function calculate(, numberButtons) { 
+//     if (numberButtons === '+') { 
+//     return add(screenInput); 
+//     } else if (numberButtons === '-') { 
+//     return subtract(screenInput); 
+//     } else if (numberButtons === '*') { 
+//     return multiply(screenInput); 
+//     } else if (numberButtons === '/') { 
+//     return divide(screenInput); 
+//     } 
+// } const result = calculate(screen.value, numberButtons); 
+// console.log(result);
+
+
+
+
+
+

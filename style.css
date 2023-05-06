@@ -7,26 +7,29 @@ body{
     width: 70%;
     margin: auto;
 }
+h1 {
+    text-align: center;
+    color: grey;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
 .container{
     width: 100%;
-    height:100vh;
+    height:600px;
     background-color:gray;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-/* .rows{
-    background-color: red;
-    width: 500px;
-}
+
 .calculator{
-     */
-.calculator{
-    background:blue;
+    background:rgb(1, 1, 22);
     padding: 20px;
     border-radius: 10px;
 }
-.calculator form input{
+.calculator #form button{
     border: 0;
     outline: 0;
     width: 60px;
@@ -38,21 +41,26 @@ body{
     cursor: pointer;
     margin: 10px;
 }
-form .display{
+.calculator #form button:hover{
+    box-shadow: -8px -8px 15px #be791f, 5px 5px 15px #be791f;
+    
+}
+
+#form .display{
     display: flex;
     justify-content: flex-end;
     margin:20px;
-    background-color: #e3f9ff;
-    
+    background-color: #bfeffc;    
 }
-form .display input{
+#form .display input{
     text-align: right;
-    flex: 1;
     font-size: 45px;
     box-shadow: none;
     color: black;
+    background-color: #bfeffc;
+    width: 300px !important;
 }
-form input.equal{
-    width: 145px;
+#equal-btn{
+    width: 145px !important;
 }
 
